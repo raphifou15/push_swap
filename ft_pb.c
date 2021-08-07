@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_add_all_elem.c                             :+:      :+:    :+:   */
+/*   ft_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/05 11:13:16 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/07 18:45:56 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/07 16:45:15 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/07 19:56:40 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_list_add_all_elem(t_list **list, char *str)
+void	ft_pb(t_list **list1, t_list **list2)
 {
-	t_list	*n;
-	int		nbr;
+	t_list	*temp;
+	t_list	*temp2;
 
-	n = NULL;
-	nbr = (int)ft_atol(str);
-	n = ft_create_new_elem(nbr);
-	if (n == NULL)
+	temp = NULL;
+	temp2 = NULL;
+	temp = *list1;
+	if (temp == NULL)
+		return ;
+	if (*list2 == NULL)
 	{
-		ft_free_all_list(list);
-		return (1);
+		temp2 = temp;
+		temp = temp->next;
+		temp2->next = NULL;
+		*list2 = temp2;
+		if (temp != NULL)
+			temp->prev = NULL;
+		*list1 = temp;
+		return ;
 	}
-	if (*list == NULL)
-	{
-		*list = n;
-		return (0);
-	}
-	ft_list_add_all_elem_2(list, n);
-	return (0);
+	ft_pb2(list1, list2);
 }

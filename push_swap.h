@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 15:32:54 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/06 19:17:36 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/07 19:32:32 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ void	ft_sa(t_list **list);
 void	ft_sb(t_list **list);
 void	ft_ss(t_list **list1, t_list **list2);
 void	ft_pb(t_list **list1, t_list **list2);
+void	ft_pb2(t_list **list1, t_list **list2);
+void	ft_pa(t_list **list2, t_list **list1);
 #endif

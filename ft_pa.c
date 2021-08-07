@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sb.c                                            :+:      :+:    :+:   */
+/*   ft_pa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <rkhelif@student.42.fr>             +#+  +:+       +#+        */
+/*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 19:05:14 by user42            #+#    #+#             */
-/*   Updated: 2021/08/07 18:48:25 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/07 19:33:15 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/07 20:07:52 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sb(t_list **list)
+void	ft_pa(t_list **list2, t_list **list1)
 {
-	t_list	*temp;
-	int		data_temp;
-
-	temp = NULL;
-	temp = *list;
-	if (temp->next != NULL)
-	{
-		data_temp = temp->nbr;
-		temp->nbr = temp->next->nbr;
-		temp->next->nbr = data_temp;
-	}
+	ft_pb(list2, list1);
 }
