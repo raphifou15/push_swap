@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 15:15:13 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/07 20:07:39 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/08 19:08:41 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,47 +26,36 @@ int	main(int argc, char *argv[])
 		return (0);
 	list = NULL;
 	list2 = NULL;
-	list = ft_init_the_list(argv, argc);
+//	list = ft_init_the_list(argv, argc);
+/*
 	ft_pb(&list, &list2);
 	ft_pb(&list, &list2);
-	ft_pb(&list, &list2);
-	ft_pb(&list, &list2);
-	ft_pb(&list, &list2);
-	ft_pa(&list2, &list);
-	ft_pa(&list2, &list);
-	ft_pa(&list2, &list);
-	ft_pa(&list2, &list);
-	ft_pa(&list2, &list);
-	ft_pa(&list2, &list);
-	ft_pa(&list2, &list);
+	ft_rrr(&list, &list2);
 	temp = list;
 	temp2 = list2;
 	while (temp != NULL)
 	{
 		printf("%d ", temp->nbr);
-		printf("%s ", (char *)temp->prev);
-		printf("%s\n", (char *)temp->next);
+		printf("temp = %s ", (char *)temp);
+		printf("temp->prev = %s ", (char *)temp->prev);
+		printf("temp->next =%s\n", (char *)temp->next);
 		if (temp->next == NULL)
 			break ;
 		temp = temp->next;
 	}
-	
+	printf("\n --------------------- \n");
 	while (temp2)
 	{
 		printf("%d ", temp2->nbr);
-		printf("%s ", (char *)temp2->prev);
-		printf("%s\n", (char *)temp2->next);
+		printf("temp2 = %s ", (char *)temp2);
+		printf("temp2->prev = %s ", (char *)temp2->prev);
+		printf("temp2->next =%s\n", (char *)temp2->next);
 		if (temp2->next == NULL)
 			break ;
 		temp2 = temp2->next;
 	}
-
-/*	while (temp)
-	{
-		printf("%d\n", temp->nbr);
-		temp = temp->prev;
-	}*/
-	ft_free_all_list(&list);
-	ft_free_all_list(&list2);
+*/
+/*	ft_free_all_list(&list);
+	ft_free_all_list(&list2);*/
 	return (0);
 }

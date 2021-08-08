@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sb.c                                            :+:      :+:    :+:   */
+/*   ft_rr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <rkhelif@student.42.fr>             +#+  +:+       +#+        */
+/*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 19:05:14 by user42            #+#    #+#             */
-/*   Updated: 2021/08/08 15:49:06 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/08 10:47:25 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/08 16:03:56 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sb(t_list **list1, t_list **list2)
+void	ft_rr(t_list **list1, t_list **list2)
 {
-	t_list	*temp;
-	int		data_temp;
-
-	(void)list1;
-	temp = NULL;
-	temp = *list2;
-	if (temp->next != NULL)
-	{
-		data_temp = temp->nbr;
-		temp->nbr = temp->next->nbr;
-		temp->next->nbr = data_temp;
-	}
+	ft_ra(list1, list2);
+	ft_rb(list1, list2);
 }

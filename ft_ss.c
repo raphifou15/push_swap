@@ -6,7 +6,7 @@
 /*   By: user42 <rkhelif@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 19:12:47 by user42            #+#    #+#             */
-/*   Updated: 2021/08/06 19:14:39 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/08 15:50:16 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_ss(t_list **list1, t_list **list2)
 {
-	ft_sa(list1);
-	ft_sb(list2);
+	ft_sa(list1, list2);
+	ft_sb(list1, list2);
 }

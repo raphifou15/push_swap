@@ -5,23 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 11:11:21 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/04 17:53:44 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/08 20:11:46 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/08 21:28:58 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_int_max(char *str)
+int	ft_check_int_max(char **argv, int argc)
 {
-	int		nbr;
-	long	nb;
+	int		i;
+	int		k;
+	long	nbr;
 
-	nbr = ft_strlen(str);
-	if (nbr > 11)
-		return (1);
-	nb = ft_atol(str);
-	if (nb > 2147483647 || nb < -2147483648)
-		return (1);
+	k = -1;
+	i = 0;
+	while (++i < argc)
+	{
+		nbr = 0;
+		if (ft_check_int_max2(argv[i], k) == 1)
+			return (1);
+	}
 	return (0);
 }

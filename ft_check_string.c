@@ -5,32 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 10:17:42 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/05 11:10:42 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/08 19:19:55 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/08 19:43:31 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_string(char *str)
+int	ft_check_string(char **argv, int argc)
 {
 	int	i;
+	int	k;
 
 	i = 0;
-	if (str[i] == '\0' || str == NULL)
-		return (1);
-	if (str[i] == '+' || str[i] == '-')
+	k = -1;
+	while (++i < argc)
 	{
-		i = 0;
-		if (str[i + 1] == '\0')
-			return (1);
-	}
-	else
-		i = -1;
-	while (str[++i] != '\0')
-	{
-		if (str[i] < 48 || str[i] > 57)
-			return (1);
+		while (argv[i][++k] != '\0')
+		{
+			if (argv[i][k] == ' ')
+				;
+			else if (argv[i][k] == '+' || argv[i][k] == '-')
+			{
+				if (argv[i][k + 1] < 48 || argv[i][k + 1] > 57)
+					return (1);
+			}
+			else if (argv[i][k] < 48 || argv[i][k] > 57)
+					return (1);
+		}
+		k = -1;
 	}
 	return (0);
 }

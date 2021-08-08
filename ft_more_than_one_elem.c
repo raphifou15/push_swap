@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sb.c                                            :+:      :+:    :+:   */
+/*   ft_more_than_one_elem.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <rkhelif@student.42.fr>             +#+  +:+       +#+        */
+/*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 19:05:14 by user42            #+#    #+#             */
-/*   Updated: 2021/08/08 15:49:06 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/08 10:24:03 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/08 10:29:58 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sb(t_list **list1, t_list **list2)
+int	ft_more_than_one_elem(t_list **list)
 {
+	int		i;
 	t_list	*temp;
-	int		data_temp;
 
-	(void)list1;
 	temp = NULL;
-	temp = *list2;
-	if (temp->next != NULL)
-	{
-		data_temp = temp->nbr;
-		temp->nbr = temp->next->nbr;
-		temp->next->nbr = data_temp;
-	}
+	temp = *list;
+	i = -1;
+	while (temp != NULL && ++i < 1)
+		temp = temp->next;
+	if (i < 1)
+		return (1);
+	return (0);
 }
