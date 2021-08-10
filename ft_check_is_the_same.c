@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_int_max.c                                 :+:      :+:    :+:   */
+/*   ft_check_is_the_same.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 20:11:46 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/09 17:57:22 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/10 22:12:17 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/10 23:22:33 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_int_max(char **argv, int argc)
+int	ft_check_is_the_same(char *tab, t_duplicata d, char **argv)
 {
-	int		i;
-	int		k;
-	long	nbr;
-	int		check_0;
+	int	i;
 
-	check_0 = 0;
-	k = -1;
 	i = 0;
-	while (++i < argc)
+	if (tab[i] == '+')
+		i++;
+	if (argv[d.i][d.k] == '+')
+		d.k++;
+	if (argv[d.i][d.k] == '-' && argv[d.i][d.k + 1] == '0')
+		d.k++;
+	while (tab[i] != '\0' && tab[i] == argv[d.i][d.k])
 	{
-		nbr = 0;
-		if (ft_check_int_max2(argv[i], k, check_0) == 1)
-			return (1);
+		i++;
+		d.k++;
 	}
+	if (tab[i] == '\0')
+		return (1);
 	return (0);
 }

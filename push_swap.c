@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 15:15:13 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/08 19:08:41 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/10 20:28:17 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 
 	temp = NULL;
 	temp2 = NULL;
-
+	
 	if (ft_check_error(argv, argc) > 0)
 		return (0);
 	list = NULL;

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 15:32:54 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/08 21:17:30 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/10 22:48:44 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ typedef	struct	s_list
 	int					nbr;
 }				t_list;
 
+typedef struct	s_duplicata
+{
+	int		size;
+	int		i;
+	int		k;
+}				t_duplicata;
+
 void	ft_put_str(char *str);
 long	ft_atol(char *str);
 
@@ -34,7 +41,12 @@ int		ft_check_error(char **argv, int argc);
 
 int		ft_check_string(char **argv, int argc);
 int		ft_check_int_max(char **argv, int argc);
-int		ft_check_int_max2(char *str, int k);
+int		ft_check_int_max2(char *str, int k, int check_0);
+int		ft_check_duplicata(char **argv, int argc);
+int		ft_check_duplicata_2(char **argv, int argc, t_duplicata d);
+int		ft_check_is_the_same(char *tab, t_duplicata d, char **argv);
+
+int		ft_size_of_number(char *str, int i);
 
 t_list	*ft_init_the_list(char **argv, int argc);
 int		ft_list_add_all_elem(t_list **list, char *str);

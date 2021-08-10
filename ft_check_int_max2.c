@@ -6,13 +6,13 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 21:03:04 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/08 21:26:48 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/09 18:08:33 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_int_max2(char *str, int k)
+int	ft_check_int_max2(char *str, int k, int check_0)
 {
 	long	nbr;
 	int		sign;
@@ -25,6 +25,11 @@ int	ft_check_int_max2(char *str, int k)
 			sign = -1;
 		if (str[k] >= 48 && str[k] <= 57)
 		{
+			if (str[k] != '0')
+				check_0 = 1;
+			if (str[k] == '0' && (str[k + 1] >= 48 && str[k] <= 57)
+				&& check_0 == 0)
+				return (1);
 			nbr *= 10;
 			nbr += (str[k] - 48);
 			if (nbr > 2147483648 || (sign == 1 && nbr > 2147483647))
@@ -32,6 +37,6 @@ int	ft_check_int_max2(char *str, int k)
 		}
 	}
 	if (str[k] == ' ')
-		return (ft_check_int_max2(str, k));
+		return (ft_check_int_max2(str, k, 0));
 	return (0);
 }
