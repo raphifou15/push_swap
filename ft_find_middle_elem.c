@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ra.c                                            :+:      :+:    :+:   */
+/*   ft_find_middle_elem.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 09:59:37 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/19 10:14:31 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/14 17:20:06 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/14 23:41:28 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ra(t_list **list1, t_list **list2)
+int	ft_find_middle_elem(t_list **list, int nbr, long index, int size)
 {
 	t_list	*temp;
 	t_list	*temp2;
-	t_list	*temp3;
-
-	temp = NULL;
-	temp2 = NULL;
-	temp3 = NULL;
-	(void)list2;
-	if (ft_more_than_one_elem(list1) == 1)
-		return ;
-	temp = *list1;
-	temp2 = temp;
-	temp3 = temp;
-	while (temp->next != NULL)
+	
+	temp = *list;
+	temp2 = *list;
+	if (++index != 1)
+	{
+		while (temp->nbr <= nbr)
+			temp = temp->next;
+		temp2 = temp;
+	}
+	while (temp != NULL)
+	{
+		if (index != 1)
+		{
+			if ( temp->nbr < temp2->nbr && temp->nbr > nbr)
+				temp2 = temp;
+		}
+		else if (temp->nbr < temp2->nbr)
+			temp2 = temp;
 		temp = temp->next;
-	temp3 = temp3->next;
-	temp->next = temp2;
-	temp2->prev = temp;
-	temp2->next = NULL;
-	temp3->prev = NULL;
-	*list1 = temp3;
+	}
+	if ((size / 2) < index)
+		return (temp2->nbr);
+	return (ft_find_middle_elem(list, temp2->nbr, index, size));
 }

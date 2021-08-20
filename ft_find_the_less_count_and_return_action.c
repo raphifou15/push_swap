@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ra.c                                            :+:      :+:    :+:   */
+/*   ft_find_the_less_count_and_return_action.          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 09:59:37 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/19 10:14:31 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/20 11:22:46 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/20 17:39:47 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ra(t_list **list1, t_list **list2)
+int	ft_find_the_less_count_and_return_action(t_count c)
 {
-	t_list	*temp;
-	t_list	*temp2;
-	t_list	*temp3;
-
-	temp = NULL;
-	temp2 = NULL;
-	temp3 = NULL;
-	(void)list2;
-	if (ft_more_than_one_elem(list1) == 1)
-		return ;
-	temp = *list1;
-	temp2 = temp;
-	temp3 = temp;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp3 = temp3->next;
-	temp->next = temp2;
-	temp2->prev = temp;
-	temp2->next = NULL;
-	temp3->prev = NULL;
-	*list1 = temp3;
+	if (c.count1 <= c.count2 && c.count1 <= c.count3 && c.count1 <= c.count4)
+		return (RB);
+	if (c.count1 > c.count2 && c.count2 <= c.count3 && c.count2 <= c.count4)
+		return (RRB);
+	if (c.count3 < c.count1 && c.count3 < c.count2 && c.count3 <= c.count4)
+		return (RB);
+	if (c.count4 < c.count1 && c.count4 < c.count2 && c.count4 < c.count3)
+		return (RRB);
+	return (RB);
 }

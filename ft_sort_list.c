@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ra.c                                            :+:      :+:    :+:   */
+/*   ft_sort_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 09:59:37 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/19 10:14:31 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/11 11:30:43 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/19 21:27:56 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ra(t_list **list1, t_list **list2)
+void	ft_sort_list(t_list **list1, t_list **list2,
+	void (**ptr)(t_list **list1, t_list **list2), t_value_for_action a)
 {
-	t_list	*temp;
-	t_list	*temp2;
-	t_list	*temp3;
-
-	temp = NULL;
-	temp2 = NULL;
-	temp3 = NULL;
-	(void)list2;
-	if (ft_more_than_one_elem(list1) == 1)
-		return ;
-	temp = *list1;
-	temp2 = temp;
-	temp3 = temp;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp3 = temp3->next;
-	temp->next = temp2;
-	temp2->prev = temp;
-	temp2->next = NULL;
-	temp3->prev = NULL;
-	*list1 = temp3;
+	if (ft_checklist_is_ordered_and_list_b_empty(list1, list2) == 1)
+	{
+		if (a.size <= 25)
+			return (ft_sort_list_under_26(list1, list2, a, ptr));
+		if (a.size <= 100)
+			return (ft_sort_list_under_101(list1, list2, a, ptr));
+	}
 }

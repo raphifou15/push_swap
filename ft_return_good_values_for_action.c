@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_all_list.c                                 :+:      :+:    :+:   */
+/*   ft_return_good_values_for_action.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <rkhelif@student.42.fr>             +#+  +:+       +#+        */
+/*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 16:39:33 by user42            #+#    #+#             */
-/*   Updated: 2021/08/19 17:04:46 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/20 11:56:00 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/20 11:58:29 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_all_list(t_list	**list)
+t_value_for_action	ft_return_good_values_for_action(t_value_for_action a,
+					int ra, int ra_next, int i)
 {
-	t_list	*temp;
-	t_list	*temp2;
-
-	temp = NULL;
-	temp2 = NULL;
-	temp = *list;
-	while (temp != NULL)
-	{
-		temp2 = temp;
-		temp = temp->next;
-		free(temp2);
-	}
+	a.i = i;
+	a.ra = ra;
+	a.ra_next += ra_next;
+	return (a);
 }

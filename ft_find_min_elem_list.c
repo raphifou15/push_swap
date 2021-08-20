@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_all_list.c                                 :+:      :+:    :+:   */
+/*   ft_find_min_elem_list.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <rkhelif@student.42.fr>             +#+  +:+       +#+        */
+/*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 16:39:33 by user42            #+#    #+#             */
-/*   Updated: 2021/08/19 17:04:46 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/12 18:23:44 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/18 11:44:04 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_all_list(t_list	**list)
+t_list	*ft_find_min_elem_list(t_list **list)
 {
 	t_list	*temp;
 	t_list	*temp2;
@@ -20,10 +20,12 @@ void	ft_free_all_list(t_list	**list)
 	temp = NULL;
 	temp2 = NULL;
 	temp = *list;
+	temp2 = *list;
 	while (temp != NULL)
 	{
-		temp2 = temp;
+		if (temp->nbr < temp2->nbr)
+			temp2 = temp;
 		temp = temp->next;
-		free(temp2);
 	}
+	return (temp2);
 }

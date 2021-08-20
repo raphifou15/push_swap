@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_all_list.c                                 :+:      :+:    :+:   */
+/*   ft_asign_index_list.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <rkhelif@student.42.fr>             +#+  +:+       +#+        */
+/*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 16:39:33 by user42            #+#    #+#             */
-/*   Updated: 2021/08/19 17:04:46 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/12 17:39:54 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/12 17:51:15 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_all_list(t_list	**list)
+void	ft_asign_index_list(t_list **list)
 {
 	t_list	*temp;
-	t_list	*temp2;
+	long	i;
 
+	i = 0;
 	temp = NULL;
-	temp2 = NULL;
 	temp = *list;
-	while (temp != NULL)
+	while  (temp)
 	{
-		temp2 = temp;
+		temp->index = ++i;
 		temp = temp->next;
-		free(temp2);
 	}
 }

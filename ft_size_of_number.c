@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 20:37:11 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/10 21:19:51 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/11 15:26:52 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	ft_size_of_number(char *str, int i)
 	y = i;
 	while (str[i] != ' ' && str[i] != '\0')
 		++i;
-	/*if (str[i] == '\0')
-		--i;*/
 	i -= y;
 	return (i);
 }

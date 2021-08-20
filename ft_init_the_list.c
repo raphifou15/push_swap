@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 09:59:49 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/06 18:54:29 by user42           ###   ########.fr       */
+/*   Updated: 2021/08/11 08:38:36 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_init_the_list(char **argv, int argc)
 	i = 0;
 	list = NULL;
 	while (++i < argc)
-		if (ft_list_add_all_elem(&list, argv[i]) == 1)
+		if (ft_list_add_all_elem(&list, argv[i], -1) == 1)
 			return (NULL);
 	return (list);
 }

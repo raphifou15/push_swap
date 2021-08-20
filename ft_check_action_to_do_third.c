@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ra.c                                            :+:      :+:    :+:   */
+/*   ft_check_action_to_do_third.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 09:59:37 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/19 10:14:31 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/20 13:33:24 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/21 00:20:45 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ra(t_list **list1, t_list **list2)
+t_value_for_action ft_check_action_to_do_third(t_list **list1, t_list **list2,
+ 					t_value_for_action a)
 {
 	t_list	*temp;
 	t_list	*temp2;
-	t_list	*temp3;
 
-	temp = NULL;
-	temp2 = NULL;
-	temp3 = NULL;
-	(void)list2;
-	if (ft_more_than_one_elem(list1) == 1)
-		return ;
 	temp = *list1;
-	temp2 = temp;
-	temp3 = temp;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp3 = temp3->next;
-	temp->next = temp2;
-	temp2->prev = temp;
-	temp2->next = NULL;
-	temp3->prev = NULL;
-	*list1 = temp3;
+	temp2 = *list2;
+
+	
+	if (temp2 != NULL && temp2->next != NULL && 
+		(temp2->nbr < 60 || temp2->nbr > 90) &&
+		ft_check_list_1(60, 90, list2) == 1)
+	{
+		a.i = RB;
+		return (a);
+	}
+	if (ft_check_if_there_value_more(list1, a) == 1)
+	{
+		if (temp->nbr >= a.middle)
+		{
+			a.i = PB;
+			return (a);
+		}
+		else
+		{
+			a.i = RA;
+			return (a);
+		}
+	}
+	a.i = -1;
+	return (a);
 }

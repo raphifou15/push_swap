@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_duplicata.c                               :+:      :+:    :+:   */
+/*   ft_check_duplicata_3.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 19:56:38 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/11 15:29:04 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/11 16:11:30 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/11 16:19:01 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_duplicata(char **argv, int argc)
+int	ft_check_duplicata_3(char **argv, int argc, t_duplicata d, char *tab)
 {
-	t_duplicata		d;
-
-	d.i = 0;
-	while (++d.i < argc)
+	while (d.i < argc)
 	{
-		d.k = -1;
-		if (argv[d.i][0] == ' ')
-			return (1);
-		while (argv[d.i][++d.k] != ('\0'))
+		while (argv[d.i][d.k] != '\0')
 		{
-			if (d.k != 0 && argv[d.i][d.k - 1] == ' ' &&
-			(argv[d.i][d.k] == ' ' || argv[d.i][d.k] == '\0'))
-				return (1);
+			if (argv[d.i][d.k] == ' ')
+				d.k++;
 			d.size = ft_size_of_number(argv[d.i], d.k);
-			if (ft_check_duplicata_2(argv, argc, d) > 0)
+			if (ft_check_is_the_same(tab, d, argv) > 0)
+			{
+				free(tab);
+				tab = NULL;
 				return (1);
-			d.k += (d.size);
-			if (argv[d.i][d.k] == ' ' && argv[d.i][d.k + 1] == '\0')
-				return (1);
-			if (argv[d.i][d.k] == '\0')
-				--d.k;
+			}
+			d.k += d.size;
 		}
+		d.i++;
+		d.k = 0;
 	}
 	return (0);
 }

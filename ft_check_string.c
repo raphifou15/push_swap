@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 19:19:55 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/08 19:43:31 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/11 15:27:46 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_check_string(char **argv, int argc)
 					return (1);
 			}
 			else if (argv[i][k] < 48 || argv[i][k] > 57)
-					return (1);
+				return (1);
 		}
 		k = -1;
 	}
