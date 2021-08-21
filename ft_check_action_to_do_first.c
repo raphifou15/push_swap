@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 22:13:56 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/21 00:34:54 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/21 10:19:11 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 		if (temp->nbr < a.middle)
 		{
 			if (temp2 != NULL && temp2->next != NULL &&
-			 (temp2->nbr < 10 || temp2->nbr > 40) &&
-			 ft_check_list_1(10, 40, list2) == 1)
+			 (temp2->nbr < a.v1 || temp2->nbr > a.v2) &&
+			 ft_check_list_1(a.v1, a.v2, list2) == 1)
 			 	a.i = RB;
 			else
 				a.i = PB;
@@ -35,7 +35,7 @@
 		else
 		{
 			if (temp2 != NULL && temp2->next != NULL &&
-				(temp2->nbr < 10 || temp2->nbr > 40))
+				(temp2->nbr < a.v1 || temp2->nbr > a.v2))
 				a.i = RR;
 			else
 				a.i = RA;

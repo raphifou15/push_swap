@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 15:32:54 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/21 00:11:51 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/21 23:39:45 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ typedef	struct	s_value_for_action
 	int	step;
 	int	ra;
 	int	ra_next;
-	int trois_quart;
+	int	v1;
+	int	v2;
+	int	v3;
+	int	v4;
+	int	level;
+	int	m;
 }				t_value_for_action;
 
 typedef	struct	s_count
@@ -184,5 +189,29 @@ int 				ft_find_trois_quart_elem(t_list **list, int nbr,long index,
 					int size);
 
 int					ft_check_list_1(int a, int b, t_list **list2);
+
+int ft_find_the_elem_value_need(t_list **list, int nbr, long index, int elem);
+
+void				ft_sort_list_above_100(t_list **list1, t_list **list2,
+					t_value_for_action a,
+					void (**ptr)(t_list **list1, t_list **list2));
+
+void				ft_sort_chunk_first_part1(t_list **list1, t_list **list2,
+					t_value_for_action a,
+					void (**ptr)(t_list **list1, t_list **list2));
+
+t_value_for_action	ft_action_to_do_part1(t_list **list1, t_list **list2,
+					t_value_for_action a);
+
+int					ft_check_if_there_value_enter(t_list **list1,
+					t_value_for_action a);
+
+void				ft_sort_chunk_last_part(t_list **list1, t_list **list2,
+					t_value_for_action a,
+					void (**ptr)(t_list **list1, t_list **list2));
+
+void				ft_check_the_list_before_push(t_list **list1, t_list **list2,
+					t_value_for_action a,
+					void (**ptr)(t_list **list1, t_list **list2));
 
 #endif
