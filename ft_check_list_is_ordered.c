@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 09:02:11 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/16 17:42:41 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/23 22:42:33 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_list_is_ordered(t_list **list)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = NULL;
 	temp = *list;

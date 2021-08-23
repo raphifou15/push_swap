@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_list_1.c                                  :+:      :+:    :+:   */
+/*   ft_return_action_after_push.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/21 00:12:32 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/22 21:00:44 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/22 21:52:38 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/23 17:00:38 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_list_1(int a, int b, t_list **list2)
+t_value_for_action	ft_return_action_after_push(t_list **list2,
+					t_value_for_action a, t_list *max, t_list *min)
 {
-	t_list	*temp;
-
-	temp = *list2;
-	while (temp != NULL)
+	if (a.sa == 1)
 	{
-		if (temp->nbr >= a && temp->nbr <= b)
-			return (1);
-		temp = temp->next;
+		a.sa = 0;
+		a.i = SA;
+		return (a);
 	}
-	return (0);
+	if (a.ra > 0)
+	{
+		a.ra--;
+		a = ft_direction_to_the_next_elem(list2, max, min, a);
+		if (a.i == RB)
+			return (ft_return_good_values_for_action(a, a.ra, 0, RR));
+		return (ft_return_good_values_for_action(a, a.ra, 0, RA));
+	}
+	return (a);
 }

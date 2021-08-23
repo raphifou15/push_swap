@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 17:39:54 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/12 17:51:15 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/22 15:14:24 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_asign_index_list(t_list **list)
 	i = 0;
 	temp = NULL;
 	temp = *list;
-	while  (temp)
+	while (temp)
 	{
 		temp->index = ++i;
 		temp = temp->next;

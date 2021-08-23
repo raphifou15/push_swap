@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 18:13:24 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/19 18:40:41 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/22 19:49:51 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_best_solution_for_three(t_list **list1, t_list **list2,
 		void (**ptr)(t_list **list1, t_list **list2))
 {
-	t_list  *min_elem;
-	t_list  *temp;
+	t_list	*min_elem;
+	t_list	*temp;
 
 	temp = *list1;
 	min_elem = ft_find_min_elem_list(list1);

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 19:22:42 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/21 20:01:41 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/22 18:09:46 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ int	ft_check_if_there_value_enter(t_list **list1, t_value_for_action a)
 	}
 	return (0);
 }
-

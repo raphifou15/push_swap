@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 19:32:52 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/19 21:18:06 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/22 21:15:16 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,9 @@ void	ft_find_min_elem_to_put_in_b(t_list **list1, t_list **list2,
 	temp = *list1;
 	min = ft_find_min_elem_list(list1);
 	if (temp->nbr == min->nbr)
-	{
 		return (ft_action(list1, list2, ptr, PB));
-	}
-	while (temp != NULL && temp->nbr != min->nbr)
-	{
-		count1++;
+	while (temp != NULL && temp->nbr != min->nbr && ++count1 != -1)
 		temp = temp->next;
-	}
 	count2++;
 	temp = ft_find_last_elem_list(list1);
 	while (temp != NULL && temp->nbr != min->nbr)

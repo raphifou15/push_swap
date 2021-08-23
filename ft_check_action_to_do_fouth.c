@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:24:20 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/20 16:32:33 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/22 14:55:14 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 t_value_for_action	ft_check_action_to_do_fouth(t_list **list2,
 					t_value_for_action a)
 {
-	return (ft_check_action_to_do_second(list2, a));
+	return (ft_check_action_to_do_second_chunk(list2, a));
 }

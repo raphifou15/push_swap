@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 10:01:06 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/21 10:14:12 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/23 09:40:10 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_find_the_elem_value_need(t_list **list, int nbr, long index, int elem)
 	temp2 = *list;
 	if (++index != 1)
 	{
-		while (temp->nbr <= nbr)
+		while (temp != NULL && temp->nbr <= nbr)
 			temp = temp->next;
 		temp2 = temp;
 	}
@@ -29,7 +29,7 @@ int	ft_find_the_elem_value_need(t_list **list, int nbr, long index, int elem)
 	{
 		if (index != 1)
 		{
-			if ( temp->nbr < temp2->nbr && temp->nbr > nbr)
+			if (temp->nbr < temp2->nbr && temp->nbr > nbr)
 				temp2 = temp;
 		}
 		else if (temp->nbr < temp2->nbr)

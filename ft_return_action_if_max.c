@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_list_1.c                                  :+:      :+:    :+:   */
+/*   ft_return_action_if_max.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/21 00:12:32 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/22 21:00:44 by rkhelif          ###   ########.fr       */
+/*   Created: 2021/08/23 19:35:36 by rkhelif           #+#    #+#             */
+/*   Updated: 2021/08/23 19:37:35 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_list_1(int a, int b, t_list **list2)
+t_value_for_action	ft_return_action_if_max(t_value_for_action a)
 {
-	t_list	*temp;
-
-	temp = *list2;
-	while (temp != NULL)
-	{
-		if (temp->nbr >= a && temp->nbr <= b)
-			return (1);
-		temp = temp->next;
-	}
-	return (0);
+	if (a.smin == 1 || a.smax == 1)
+		a.sa = 1;
+	a.smax = 0;
+	return (ft_return_good_values_for_action(a, 0, 1, PA));
 }

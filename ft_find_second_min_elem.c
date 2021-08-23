@@ -6,13 +6,13 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 21:59:42 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/08/20 21:59:45 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/08/22 15:07:48 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *ft_find_second_min_elem(t_list **list, t_list *min)
+t_list	*ft_find_second_min_elem(t_list **list, t_list *min)
 {
 	t_list	*temp;
 	t_list	*temp2;
